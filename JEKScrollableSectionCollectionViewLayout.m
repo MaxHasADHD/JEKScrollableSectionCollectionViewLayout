@@ -528,7 +528,7 @@ NSString * const JEKCollectionElementKindSectionBackground = @"JEKCollectionElem
     }
 
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:self.indexPath];
-    attributes.frame = CGRectMake(0.0, self.offset.y, self.collectionViewWidth, self.headerSize.height);
+    attributes.frame = CGRectMake(self.insets.left, self.offset.y, self.collectionViewWidth, self.headerSize.height);
     return attributes;
 }
 
@@ -540,7 +540,7 @@ NSString * const JEKCollectionElementKindSectionBackground = @"JEKCollectionElem
 
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:self.indexPath];
     CGRect sectionFrame = self.frame;
-    attributes.frame = CGRectMake(0.0, CGRectGetMaxY(sectionFrame) - self.footerSize.height, self.collectionViewWidth, self.footerSize.height);
+    attributes.frame = CGRectMake(self.insets.left, CGRectGetMaxY(sectionFrame) - self.footerSize.height, self.collectionViewWidth, self.footerSize.height);
     return attributes;
 }
 
